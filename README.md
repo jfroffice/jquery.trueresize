@@ -6,8 +6,13 @@ The main objective of this project is to demonstrate the relevance of using a sc
 Results
 ======
 
-(Coming Soon)
+- **Chrome**
 
+![logo!](https://github.com/jfroffice/jquery.trueresize/raw/master/img/chrome.png)
+
+- **Firefox**
+
+![logo!](https://github.com/jfroffice/jquery.trueresize/raw/master/img/firefox.png)
 
 Demo
 ====
