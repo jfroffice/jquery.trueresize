@@ -1,39 +1,43 @@
-var count = 0,
-    nbValue = 20,
-    data = [],
-    lastDate;
+;(function() {
 
-function render() {
+    var count = 0,
+        NB_VALUE = 20,
+        data = [],
+        lastDate;
 
-    var newDate = new Date(),
+    function render() {
 
-        delta = newDate - (lastDate || newDate);
+        var newDate = new Date(),
+            delta = newDate - (lastDate || newDate);
 
-    if (delta > 500) {
+        if (delta > 500) {
+            lastDate = newDate;
+            return;
+        }
+
+        data.push(delta);
+
+        var size = data.length,
+            tmp = data.slice(size - NB_VALUE, size - 1),
+            $line = $('span.line');
+
+        $line.html(tmp.join(','));
+        $("#max").html(Math.max.apply(null, tmp) + ' ms');
+        $line.peity("line", {
+                        height: 96,
+                        width: 600,
+                        min: 0
+                    });
+
         lastDate = newDate;
-        return;
     }
 
-    data.push(delta);
-    var size = data.length;
+    $(function() {
+        $(window).resize(function() {
 
-    var tmp = data.slice(size-nbValue, size-1);
-    $('span.line').html(tmp.join(','));
-
-    $("#max").html(Math.max.apply(null, tmp));
-
-    $("span.line").peity("line", {
-                             height: 96,
-                             width: 512,
-                             min: 0,
-/*                             max: 120*/
-                         });
-
-    lastDate = newDate;
-}
-
-$(function() {
-    $(window).resize(function() {
-        render();
+            console.log($(window).width());
+            render();
+        });
     });
-});
+
+})( jQuery );
