@@ -12,10 +12,10 @@ Results
 Demo
 ====
 
-[Fullscreen](http://jfroffice.github.com/jquery.trueresize/demo/)
+[Fullscreen](http://jfroffice.github.com/jquery.trueresize/fullscreen/)
 
-Do not forget to resize the browser screen view
+Resize browser screen view
 
-[IFrame](http://jfroffice.github.com/jquery.trueresize/)
+[IFrame](http://jfroffice.github.com/jquery.trueresize/iframe/)
 
 Not sure, this is really usefull...
