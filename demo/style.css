@@ -1,0 +1,32 @@
+.block {
+    background-color: red;
+    width: 100px;
+    height: 100px;
+}
+
+.block2 {
+    background-color: blue;
+    width: 200px;
+    height: 200px;
+    margin-left: 300px;
+}
+
+#container {
+    position: absolute;
+    right: 40px;
+    bottom: 10px;
+}
+
+#max {
+    position: absolute;
+    right: 10px;
+    bottom: 100px;
+    font-size: 10px;
+}
+
+#min {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-size: 10px;
+}
