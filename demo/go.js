@@ -9,7 +9,7 @@ function render() {
 
         delta = newDate - (lastDate || newDate);
 
-    if (delta > 1000) {
+    if (delta > 500) {
         lastDate = newDate;
         return;
     }
