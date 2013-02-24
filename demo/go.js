@@ -21,7 +21,7 @@ function render() {
                              height: 96,
                              width: 512,
                              min: 0,
-                             max: 120
+/*                             max: 120*/
                          });
 
     lastDate = newDate;
