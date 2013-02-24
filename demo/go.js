@@ -9,6 +9,11 @@ function render() {
 
         delta = newDate - (lastDate || newDate);
 
+    if (delta > 1000) {
+        lastDate = newDate;
+        return;
+    }
+
     data.push(delta);
     var size = data.length;
 
