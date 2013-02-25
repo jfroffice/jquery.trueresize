@@ -4,7 +4,7 @@ font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 h2 {
-margin-top: 20px;
+margin-top: 50px;
 }
 
 .plot {
@@ -13,22 +13,22 @@ position: relative;
 left: 45px;
 top: 10px;
 width: 650px;
-height: 96px;
+height: 128px;
 margin-bottom: 40px;
 }
 
 .plot > div {
 font-size: 10px;
 position: absolute;
-left: -40px;
+left: -42px;
 }
 
 #max {
-bottom: 80px;
+top: 0;
 }
 
 #min {
-bottom: 2px;
+bottom: 0;
 }
 
 #resize {

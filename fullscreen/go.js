@@ -34,7 +34,9 @@
     $(function() {
         $(window).resize(function() {
             render($('#container'), $("#max"), $('span.line'));
+            //render($('#container2'), $("#max2"), $('span.line2'));
         });
+
     });
 
 })( jQuery );
