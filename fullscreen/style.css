@@ -1,0 +1,29 @@
+#container {
+    position: absolute;
+    left: 50px;
+    top: 50px;
+}
+
+#max {
+position: absolute;
+left: -40px;
+bottom: 80px;
+font-size: 10px;
+}
+
+#min {
+position: absolute;
+left: -40px;
+bottom: 2px;
+font-size: 10px;
+}
+
+#resize {
+bottom: 0;
+right: 0;
+position: absolute;
+width: 110px;
+height: 130px;
+background-image: url("../img/resize.png");
+background-repeat: no-repeat;
+}
