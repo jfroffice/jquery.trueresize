@@ -1,20 +1,12 @@
-.block {
-    background-color: red;
-    width: 100px;
-    height: 100px;
-}
-
-.block2 {
-    background-color: blue;
-    width: 200px;
-    height: 200px;
-    margin-left: 300px;
+body {
+padding: 50px;
+font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 #container {
-    position: absolute;
-    left: 50px;
-    top: 50px;
+position: absolute;
+left: 95px;
+top: 140px;
 }
 
 #max {
