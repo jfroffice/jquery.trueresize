@@ -2,23 +2,26 @@
 
     var count = 0,
         NB_VALUE = 20,
+        MAX_OFFSET = 400,
         data = [],
-        lastDate;
+        data2 = [],
+        lastDate,
+        lastDate2;
 
-    function render($container, $max, $line) {
+    function render($container, $max, $line, myData, myLastDate) {
 
         var newDate = new Date(),
-            delta = newDate - (lastDate || newDate);
+            delta = newDate - (myLastDate || newDate);
 
-        if (delta > 400) {
-            lastDate = newDate;
+        if (delta > MAX_OFFSET) {
+            myLastDate = newDate;
             return;
         }
 
-        data.push(delta);
+        myData.push(delta);
 
-        var size = data.length,
-            tmp = data.slice(size - NB_VALUE, size - 1);
+        var size = myData.length,
+            tmp = myData.slice(size - NB_VALUE, size - 1);
 
         $line.html(tmp.join(','));
         $max.html(Math.max.apply(null, tmp) + ' ms');
@@ -28,13 +31,16 @@
                         min: 0
                     });
 
-        lastDate = newDate;
+        return newDate;
     }
 
     $(function() {
         $(window).resize(function() {
-            render($('#container'), $("#max"), $('span.line'));
-            //render($('#container2'), $("#max2"), $('span.line2'));
+            lastDate = render($('#container'), $("#max"), $('span.line'), data, lastDate);            
+        });
+
+        $(window).on("debouncedresize", function() {
+            lastDate2 = render($('#container2'), $("#max2"), $('span.line2'), data2, lastDate2);
         });
 
     });

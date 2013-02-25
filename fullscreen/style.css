@@ -15,6 +15,7 @@ top: 10px;
 width: 650px;
 height: 128px;
 margin-bottom: 40px;
+padding-top: 10px;
 }
 
 .plot > div {
@@ -40,3 +41,4 @@ height: 130px;
 background-image: url("../img/resize.png");
 background-repeat: no-repeat;
 }
+
