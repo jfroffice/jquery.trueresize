@@ -5,12 +5,12 @@
         data = [],
         lastDate;
 
-    function render() {
+    function render($container, $max, $line) {
 
         var newDate = new Date(),
             delta = newDate - (lastDate || newDate);
 
-        if (delta > 500) {
+        if (delta > 400) {
             lastDate = newDate;
             return;
         }
@@ -18,14 +18,13 @@
         data.push(delta);
 
         var size = data.length,
-            tmp = data.slice(size - NB_VALUE, size - 1),
-            $line = $('span.line');
+            tmp = data.slice(size - NB_VALUE, size - 1);
 
         $line.html(tmp.join(','));
-        $("#max").html(Math.max.apply(null, tmp) + ' ms');
+        $max.html(Math.max.apply(null, tmp) + ' ms');
         $line.peity("line", {
-                        height: 96,
-                        width: 600,
+                        height: $container.height(),
+                        width: $container.width(),
                         min: 0
                     });
 
@@ -34,9 +33,7 @@
 
     $(function() {
         $(window).resize(function() {
-
-            console.log($(window).width());
-            render();
+            render($('#container'), $("#max"), $('span.line'));
         });
     });
 
