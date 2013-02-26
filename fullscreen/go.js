@@ -13,11 +13,11 @@
         var newDate = new Date(),
             delta = newDate - (myLastDate || newDate);
 
-        if (delta > MAX_OFFSET) {
+ /*       if (delta > MAX_OFFSET) {
             myLastDate = newDate;
             return;
         }
-
+*/
         myData.push(delta);
 
         var size = myData.length,
@@ -38,6 +38,8 @@
         $(window).resize(function() {
             lastDate = render($('#container'), $("#max"), $('span.line'), data, lastDate);            
         });
+
+        $.event.special.debouncedresize.threshold = 10;
 
         $(window).on("debouncedresize", function() {
             lastDate2 = render($('#container2'), $("#max2"), $('span.line2'), data2, lastDate2);
