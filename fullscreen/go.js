@@ -1,7 +1,7 @@
 ;(function() {
 
     var count = 0,
-        NB_VALUE = 20,
+        NB_VALUE = 16,
         MAX_OFFSET = 400,
         data = [],
         data2 = [],
@@ -39,9 +39,9 @@
             lastDate = render($('#container'), $("#max"), $('span.line'), data, lastDate);            
         });
 
-        $.event.special.debouncedresize.threshold = 10;
+/*        $.event.special.debouncedresize.threshold = 10;*/
 
-        $(window).on("debouncedresize", function() {
+        $(window).on("throttledresize", function() {
             lastDate2 = render($('#container2'), $("#max2"), $('span.line2'), data2, lastDate2);
         });
 
