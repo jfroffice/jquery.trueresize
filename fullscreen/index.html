@@ -2,9 +2,9 @@
 <head>
     <link rel="stylesheet" href="style.css" />
     <script src="../libs/jquery.min.js"></script>
-    <script src="../libs/jquery.peity.min.js"></script>
     <script src="../libs/jquery.throttledresize.js"></script>
     <script src="../libs/jquery.debouncedresize.js"></script>
+    <script src="../libs/flotr2.min.js"></script>
     <script src="go.js"></script>
 </head>
 <body>
@@ -14,15 +14,9 @@
     <h1>jquery.trueresize</h1>
     <h2>without</h2>
     <div id='container' class='plot'>
-      <div id='max' class='max'></div>
-      <div id='min' class='min'>0 ms</div>
-      <span class='line'></span>
     </div>
-    <h2>with debouncedresize (10ms)</h2>
+    <h2>with</h2>
     <div id='container2' class='plot'>
-      <div id='max2' class='max'></div>
-      <div id='min2' class='min'>0 ms</div>
-      <span class='line2'></span>
     </div>
     <div id='resize'></div>
 </body>

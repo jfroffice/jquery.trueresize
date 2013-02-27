@@ -1,8 +1,13 @@
 ;(function() {
 
-    var count = 0,
-        NB_VALUE = 64,
+    var NB_VALUE = 20,
         MAX_OFFSET = 400,
+        pref = {
+            xaxis: { minorTickFreq: 4 },
+            grid: { minorVerticalLines: true },
+            points: { show: true },
+            lines: { show: true, fill: true }
+          },
         data = [],
         data2 = [],
         lastDate,
@@ -29,44 +34,37 @@
         _timer = setTimeout(resizeDirect, TIMEOUT_REFRESH);
     }
 
+    function render1() {
+        lastDate = render($('#container'), $("#max"), $('span.line'), data, lastDate);
+    }
+
+    function render2() {
+        lastDate2 = render($('#container2'), $("#max2"), $('span.line2'), data2, lastDate2);
+    }
+
     function render($container, $max, $line, myData, myLastDate) {
 
         var newDate = new Date(),
             delta = newDate - (myLastDate || newDate);
 
- /*       if (delta > MAX_OFFSET) {
+        if (delta > MAX_OFFSET) {
             myLastDate = newDate;
             return;
         }
-*/
-        myData.push(delta);
+
+        myData.push([newDate, delta]);
 
         var size = myData.length,
-            tmp;
+            slice = myData.slice(size - NB_VALUE, size - 1),
+            tmp = [];
 
-        if ($container.attr('id') == 'container') {
-            tmp = myData.slice(size - NB_VALUE, size - 1);
-        } else {
-            tmp = myData.slice(size - (NB_VALUE / 2), size - 1);
+        for(var i=0;i<slice.length;i++) {
+            tmp.push([(slice[i][0] - slice[0][0]), slice[i][1]])
         }
 
-        $line.html(tmp.join(','));
-        $max.html(Math.max.apply(null, tmp) + ' ms');
-        $line.peity("line", {
-                        height: $container.height(),
-                        width: $container.width(),
-                        min: 0
-                    });
+        graph = Flotr.draw($container[0], [ tmp ], pref);
 
         return newDate;
-    }
-
-    function render1() {
-        lastDate = render($('#container'), $("#max"), $('span.line'), data, lastDate);  
-    }
-
-    function render2() {
-        lastDate2 = render($('#container2'), $("#max2"), $('span.line2'), data2, lastDate2);
     }
 
     $(function() {
@@ -77,6 +75,13 @@
         $(window).resize(function() {
             resize();
         });
+
+/*        $(window).on("debouncedresize", function() {
+            lastDate2 = render($('#container2'), $("#max2"), $('span.line2'), data2, lastDate2);
+        });*/
+
+        
+
     });
 
 })( jQuery );

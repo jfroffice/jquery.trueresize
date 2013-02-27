@@ -8,7 +8,6 @@ margin-top: 50px;
 }
 
 .plot {
-border: 1px solid #ccc;
 position: relative;
 left: 45px;
 top: 10px;
@@ -24,14 +23,13 @@ position: absolute;
 left: -42px;
 }
 
-.max {
+#max {
 top: 0;
 }
 
-.min {
+#min {
 bottom: 0;
 }
-
 
 #resize {
 position: absolute;
