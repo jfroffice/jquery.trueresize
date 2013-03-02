@@ -5,6 +5,7 @@
         pref = {
             xaxis: { minorTickFreq: 4 },
             grid: { minorVerticalLines: true },
+            yaxis: { min: 0 },
             points: { show: true },
             lines: { show: true, fill: true }
           },
@@ -12,7 +13,7 @@
         data2 = [],
         lastDate,
         lastDate2,
-        TIMEOUT_REFRESH = 10,
+        TIMEOUT_REFRESH = 150,
         _timer;
 
     function resizeDirect() {
@@ -45,21 +46,23 @@
     function render($container, $max, $line, myData, myLastDate) {
 
         var newDate = new Date(),
+            tmp = [],
+            i = myData.length,
             delta = newDate - (myLastDate || newDate);
-
-        if (delta > MAX_OFFSET) {
-            myLastDate = newDate;
-            return;
-        }
 
         myData.push([newDate, delta]);
 
-        var size = myData.length,
-            slice = myData.slice(size - NB_VALUE, size - 1),
-            tmp = [];
+        while (i >= 0) {
+  
+            var timeElapsed = newDate - myData[i][0];
+            
+            if (timeElapsed < 5000) {
+                tmp.push([timeElapsed, myData[i][1]])
+            } else {
+                break;
+            }
 
-        for(var i=0;i<slice.length;i++) {
-            tmp.push([(slice[i][0] - slice[0][0]), slice[i][1]])
+            --i;
         }
 
         graph = Flotr.draw($container[0], [ tmp ], pref);
@@ -75,12 +78,10 @@
         $(window).resize(function() {
             resize();
         });
-
-/*        $(window).on("debouncedresize", function() {
-            lastDate2 = render($('#container2'), $("#max2"), $('span.line2'), data2, lastDate2);
+/*
+        $(window).on("throttledresize", function() {
+            render2();
         });*/
-
-        
 
     });
 
