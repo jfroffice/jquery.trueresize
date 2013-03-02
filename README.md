@@ -6,13 +6,11 @@ The main objective of this project is to demonstrate the relevance of using a sc
 Results
 =======
 
-without
--------
+**without**
 
 ![logo!](https://github.com/jfroffice/jquery.trueresize/raw/master/img/without.jpg)
 
-with
-----
+**with**
 
 ![logo!](https://github.com/jfroffice/jquery.trueresize/raw/master/img/with.jpg)
 
