@@ -3,16 +3,19 @@ Goals
 
 The main objective of this project is to demonstrate the relevance of using a script debounce to ensure that resize events are triggered correctly
 
-Results
-======
+Without
+=======
 
 - **Chrome**
 
-![logo!](https://github.com/jfroffice/jquery.trueresize/raw/master/img/chrome.png)
+![logo!](https://github.com/jfroffice/jquery.trueresize/raw/master/img/without.jpg)
 
-- **Firefox**
+With
+====
 
-![logo!](https://github.com/jfroffice/jquery.trueresize/raw/master/img/firefox.png)
+- **Chrome**
+
+![logo!](https://github.com/jfroffice/jquery.trueresize/raw/master/img/with.jpg)
 
 Demo
 ====
