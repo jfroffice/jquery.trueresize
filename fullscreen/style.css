@@ -3,32 +3,41 @@ padding: 50px;
 font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-#container {
+h2 {
+margin-top: 50px;
+}
+
+.plot {
+position: relative;
+left: 45px;
+top: 10px;
+width: 650px;
+height: 128px;
+margin-bottom: 40px;
+padding-top: 10px;
+}
+
+.plot > div {
+font-size: 10px;
 position: absolute;
-left: 95px;
-top: 140px;
+left: -42px;
 }
 
 #max {
-position: absolute;
-left: -40px;
-bottom: 80px;
-font-size: 10px;
+top: 0;
 }
 
 #min {
-position: absolute;
-left: -40px;
-bottom: 2px;
-font-size: 10px;
+bottom: 0;
 }
 
 #resize {
+position: absolute;
 bottom: 0;
 right: 0;
-position: absolute;
 width: 110px;
 height: 130px;
 background-image: url("../img/resize.png");
 background-repeat: no-repeat;
 }
+
