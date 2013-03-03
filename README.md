@@ -6,13 +6,9 @@ The main objective of this project is to demonstrate the relevance of using a sc
 
 # Results
 
-**without**
+![logo!](https://github.com/jfroffice/jquery.trueresize/raw/master/img/without.png)
 
-![logo!](https://github.com/jfroffice/jquery.trueresize/raw/master/img/without.jpg)
-
-**with**
-
-![logo!](https://github.com/jfroffice/jquery.trueresize/raw/master/img/with.jpg)
+![logo!](https://github.com/jfroffice/jquery.trueresize/raw/master/img/with.png)
 
 # Getting Started
 
