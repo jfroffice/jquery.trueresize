@@ -1,7 +1,7 @@
 ;(function() {
 
-    var NB_VALUE = 20,
-        MAX_OFFSET = 400,
+    var data = [],
+        data2 = [],
         pref = {
             xaxis: { minorTickFreq: 4 },
             grid: { minorVerticalLines: true },
@@ -9,30 +9,22 @@
             points: { show: true },
             lines: { show: true, fill: true }
           },
-        data = [],
-        data2 = [],
+        TIMEOUT_REFRESH = 10,
         lastDate,
         lastDate2,
-        TIMEOUT_REFRESH = 150,
         _timer;
 
-    function resizeDirect() {
+    function resize(callback, timeout) {
+        (function() {
+            if (_timer) {
+                clearTimeout(_timer);
+            }
 
-        if (_timer) {
-            clearTimeout(_timer);
-            _timer = null;
-        }
-
-        render2();
-    }
-
-    function resize() {
-
-        if (_timer) {
-            clearTimeout(_timer);
-        }
-
-        _timer = setTimeout(resizeDirect, TIMEOUT_REFRESH);
+            _timer = setTimeout(function() {
+                _timer = null;
+                callback && callback();
+            }, timeout || TIMEOUT_REFRESH);
+        })();
     }
 
     function render1() {
@@ -56,7 +48,7 @@
   
             var timeElapsed = newDate - myData[i][0];
             
-            if (timeElapsed < 5000) {
+            if (timeElapsed < 4000) {
                 tmp.push([timeElapsed, myData[i][1]])
             } else {
                 break;
@@ -76,7 +68,7 @@
         });
 
         $(window).resize(function() {
-            resize();
+            resize(render2, 20);
         });
 /*
         $(window).on("throttledresize", function() {
