@@ -3,29 +3,14 @@
     var data = [],
         data2 = [],
         pref = {
-            xaxis: { minorTickFreq: 4 },
+            xaxis: { minorTickFreq: 4, title: 'time (ms)' },
+            yaxis: { min: 0, title: 'delay (ms)' },
             grid: { minorVerticalLines: true },
-            yaxis: { min: 0 },
             points: { show: true },
             lines: { show: true, fill: true }
           },
-        TIMEOUT_REFRESH = 10,
         lastDate,
-        lastDate2,
-        _timer;
-
-    function resize(callback, timeout) {
-        (function() {
-            if (_timer) {
-                clearTimeout(_timer);
-            }
-
-            _timer = setTimeout(function() {
-                _timer = null;
-                callback && callback();
-            }, timeout || TIMEOUT_REFRESH);
-        })();
-    }
+        lastDate2;
 
     function render1() {
         lastDate = render($('#container'), $("#max"), $('span.line'), data, lastDate);
@@ -62,19 +47,18 @@
         return newDate;
     }
 
-    $(function() {
-        $(window).resize(function() {
-            render1();
-        });
-
-        $(window).resize(function() {
-            resize(render2, 20);
-        });
-/*
-        $(window).on("throttledresize", function() {
-            render2();
-        });*/
-
+    $(window).resize(function() {
+        render1();
     });
+
+    $(window).on('trueresize', function() {
+        render2();
+    });
+
+/*
+    $(window).on("throttledresize", function() {
+        render2();
+    });
+*/
 
 })( jQuery );
