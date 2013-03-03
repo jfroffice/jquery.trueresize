@@ -9,9 +9,9 @@ Download the [production version][min] or the [development version][max].
 [min]: https://raw.github.com/jfroffice/jquery.trueresize/master/dist/jquery.trueresize.min.js
 [max]: https://raw.github.com/jfroffice/jquery.trueresize/master/dist/jquery.trueresize.js
 
-[Demo](http://jfroffice.github.com/jquery.trueresize/fullscreen/)
+# Demo
 
-Resize browser screen view during at least 5 seconds
+[Here](http://jfroffice.github.com/jquery.trueresize/fullscreen/)
 
 # Results
 
