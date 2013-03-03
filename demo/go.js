@@ -33,7 +33,7 @@
   
             var timeElapsed = newDate - myData[i][0];
             
-            if (timeElapsed < 4000) {
+            if (timeElapsed < 3000) {
                 tmp.push([timeElapsed, myData[i][1]])
             } else {
                 break;

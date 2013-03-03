@@ -2,7 +2,7 @@
 
 The main objective of this project is to demonstrate the relevance of using a script debounce to ensure that resize events are triggered correctly
 
-[Demo](http://jfroffice.github.com/jquery.trueresize/demo/) (Do not forget to resize the browser window for at least 4 seconds)
+[Demo](http://jfroffice.github.com/jquery.trueresize/demo/) (Do not forget to resize the browser window for at least 3 seconds)
 
 # Results
 
