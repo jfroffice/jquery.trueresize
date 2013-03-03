@@ -2,16 +2,7 @@
 
 The main objective of this project is to demonstrate the relevance of using a script debounce to ensure that resize events are triggered correctly
 
-# Getting Started
-
-Download the [production version][min] or the [development version][max].
-
-[min]: https://raw.github.com/jfroffice/jquery.trueresize/master/dist/jquery.trueresize.min.js
-[max]: https://raw.github.com/jfroffice/jquery.trueresize/master/dist/jquery.trueresize.js
-
-# Demo
-
-[Here](http://jfroffice.github.com/jquery.trueresize/demo/)
+[Demo](http://jfroffice.github.com/jquery.trueresize/demo/)
 
 # Results
 
@@ -23,5 +14,10 @@ Download the [production version][min] or the [development version][max].
 
 ![logo!](https://github.com/jfroffice/jquery.trueresize/raw/master/img/with.jpg)
 
+# Getting Started
 
+Download the [production version][min] or the [development version][max].
+
+[min]: https://raw.github.com/jfroffice/jquery.trueresize/master/dist/jquery.trueresize.min.js
+[max]: https://raw.github.com/jfroffice/jquery.trueresize/master/dist/jquery.trueresize.js
 
