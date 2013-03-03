@@ -1,25 +1,15 @@
 ;(function($) {
 
-	var TIMEOUT_REFRESH = 20,
-		timer;
+    var timer;
 
-	function debounced(cb) {
+    $(window).resize(function() {
         (function() {
-            if (timer) {
-                clearTimeout(timer);
-            }
-
+            timer && clearTimeout(timer);
             timer = setTimeout(function() {
                 timer = null;
-                cb && cb();
-            }, TIMEOUT_REFRESH);
+                $(window).trigger('trueresize');
+            }, 20);
         })();
-    }
-
-	$(window).resize(function() {
-		debounced(function() {
-			$(window).trigger('trueresize');
-		});			
-	});
+    });
 
 })(jQuery);
