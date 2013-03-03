@@ -11,7 +11,7 @@ Download the [production version][min] or the [development version][max].
 
 # Demo
 
-[Here](http://jfroffice.github.com/jquery.trueresize/fullscreen/)
+[Here](http://jfroffice.github.com/jquery.trueresize/demo/)
 
 # Results
 
