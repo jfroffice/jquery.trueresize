@@ -12,14 +12,6 @@
         lastDate,
         lastDate2;
 
-    function render1() {
-        lastDate = render($('#container'), $("#max"), $('span.line'), data, lastDate);
-    }
-
-    function render2() {
-        lastDate2 = render($('#container2'), $("#max2"), $('span.line2'), data2, lastDate2);
-    }
-
     function render($container, $max, $line, myData, myLastDate) {
 
         var newDate = new Date(),
@@ -48,17 +40,11 @@
     }
 
     $(window).resize(function() {
-        render1();
+        lastDate = render($('#container'), $("#max"), $('span.line'), data, lastDate);
     });
 
     $(window).on('trueresize', function() {
-        render2();
+        lastDate2 = render($('#container2'), $("#max2"), $('span.line2'), data2, lastDate2);
     });
-
-/*
-    $(window).on("throttledresize", function() {
-        render2();
-    });
-*/
 
 })( jQuery );
