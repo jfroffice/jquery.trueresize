@@ -23,15 +23,7 @@ position: absolute;
 left: -42px;
 }
 
-#max {
-top: 0;
-}
-
-#min {
-bottom: 0;
-}
-
-#resize {
+.resize {
 position: absolute;
 bottom: 0;
 right: 0;
