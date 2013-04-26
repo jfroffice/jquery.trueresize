@@ -1,4 +1,4 @@
-/*! jquery.trueresize - v0.1.0 - 2013-03-03
+/*! jquery.trueresize - v0.1.0 - 2013-04-26
 * https://github.com/jfroffice/jquery.trueresize
 * Copyright (c) 2013 John Fischer; Licensed MIT */
 

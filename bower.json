@@ -1,0 +1,8 @@
+{
+    "name": "jquery.trueresize",
+    "version": "0.1.0",
+    "main": "./src/jquery.trueresize.js",
+    "dependencies": {
+        "jquery": "*"
+    }
+}
