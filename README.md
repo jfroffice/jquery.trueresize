@@ -6,7 +6,7 @@ The main objective of this project is to demonstrate the relevance of using a sc
 
 # How to use ?
 
-```
+```javascript
 $(window).on('trueresize', function() {
     // do your job here
 });
