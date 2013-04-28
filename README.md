@@ -4,6 +4,14 @@ The main objective of this project is to demonstrate the relevance of using a sc
 
 [Demo](http://jfroffice.github.com/jquery.trueresize/demo/) (Do not forget to resize the browser window for at least 3 seconds)
 
+# How to use ?
+
+```
+$(window).on('trueresize', function() {
+    // do your job here
+});
+```
+
 # Results
 
 ![logo!](https://github.com/jfroffice/jquery.trueresize/raw/master/img/without.png)
