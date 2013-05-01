@@ -4,7 +4,7 @@ The main objective of this project is to demonstrate the relevance of using a sc
 
 [Demo](http://jfroffice.github.com/jquery.trueresize/demo/) (Do not forget to resize the browser window for at least 3 seconds)
 
-# How to bind resize Event ?
+# How to bind resize event ?
 
 ```javascript
 $(window).on('trueresize', function() {
